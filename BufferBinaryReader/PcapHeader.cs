@@ -30,12 +30,12 @@ public class PcapHeader
    public PcapHeader(byte[] HeaderData)
    {
       MagicNumber = BitConverter.ToUInt32(HeaderData, 0);
-      MajorVersion = BitConverter.ToUInt16(HeaderData, 32);
-      MinorVersion = BitConverter.ToUInt16(HeaderData, 48);
-      Reserved1 = BitConverter.ToUInt32(HeaderData, 64);
-      Reserved2 = BitConverter.ToUInt32(HeaderData, 96);
-      SnapLen = BitConverter.ToUInt32(HeaderData, 128);
-      LinkType = BitConverter.ToUInt32(HeaderData, 160);
+      MajorVersion = BitConverter.ToUInt16(HeaderData, 4);
+      MinorVersion = BitConverter.ToUInt16(HeaderData, 6);
+      Reserved1 = BitConverter.ToUInt32(HeaderData, 8);
+      Reserved2 = BitConverter.ToUInt32(HeaderData, 12);
+      SnapLen = BitConverter.ToUInt32(HeaderData, 16);
+      LinkType = BitConverter.ToUInt32(HeaderData, 20);
    }
 
    public bool IsPcapValid()

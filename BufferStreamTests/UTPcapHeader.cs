@@ -9,7 +9,7 @@ public class UTPcapHeader
     public UTPcapHeader()
     {
         BufferBinaryReader reader = new BufferBinaryReader("Files/TestFile.pcap");
-        header = new PcapHeader(reader.ReadBytes(192));
+        header = new PcapHeader(reader.ReadBytes(24));
     }
 
     [Fact]
@@ -22,5 +22,5 @@ public class UTPcapHeader
     public void GetTimestamp()
     {
         Assert.Equal(header.GetTimestampFormat(),"Microseconds");
-    }
+   }
 }
