@@ -9,17 +9,17 @@ public class UTPcapHeader
     public UTPcapHeader()
     {
         BufferBinaryReader reader = new BufferBinaryReader("Files/TestFile.pcap");
-        header = new PcapHeader(reader.ReadBytes(24));
+        header = new PcapHeader(reader.ReadBytes(PcapHeader.PcapHeaderLength));
     }
 
     [Fact]
-    public void IsValidPcapHeader()
+    public void IsPcapValid_ShouldReturnTrue_IfPcapFile()
     {
         Assert.Equal(header.IsPcapValid(), true);
     }
 
     [Fact]
-    public void GetTimestamp()
+    public void GetimestampFormat_ShouldReturnMicroseconds_WhenMagicNumber0xA1B2C3D4()
     {
         Assert.Equal(header.GetTimestampFormat(),"Microseconds");
    }

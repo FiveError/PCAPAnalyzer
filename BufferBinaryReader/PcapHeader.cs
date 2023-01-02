@@ -19,6 +19,7 @@ public class PcapHeader
    20 | FCS |f|                   LinkType                            |
       +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
     */
+   public const UInt16 PcapHeaderLength = 24;
    public UInt32 MagicNumber { get;}
    public UInt16 MajorVersion { get; }
    public UInt16 MinorVersion { get; }
