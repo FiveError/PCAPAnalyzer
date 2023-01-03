@@ -1,10 +1,10 @@
 ﻿
 namespace BufferStream
 {
-
+    //TODO Change bufferoffset and fileoffset during seeking
     public class BufferBinaryReader : IDisposable
     {
-        private UInt32 _bufferSize;
+        private const UInt32 _bufferSize = 262144;
         private byte[] _buffer;
         private UInt32 _bufferOffset;
         private Int64 _readDataSize;
@@ -19,16 +19,15 @@ namespace BufferStream
             _reader.Close();
             _stream.Close();
         }
-        public BufferBinaryReader(string FileName, UInt32 BufferSize = 4096)
+        public BufferBinaryReader(string FileName)
         {
             _fileName = FileName;
             if (!IsFileExists())
             {
-                throw new ArgumentException();
+                throw new ArgumentException("File doesn't exist!");
             }
             _bufferOffset = 0;
             _readDataSize = 0;
-            _bufferSize = BufferSize;
             _buffer = new byte[_bufferSize];
             _stream = new FileStream(_fileName, FileMode.Open, FileAccess.Read);
             _reader = new BinaryReader(_stream);

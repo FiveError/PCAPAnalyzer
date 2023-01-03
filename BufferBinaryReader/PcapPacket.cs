@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Runtime.InteropServices;
 
 namespace BufferStream;
@@ -50,10 +51,15 @@ public class PcapPacket
 
     public PcapPacket(byte[] RawData)
     {
-        _timestamp1 = BitConverter.ToUInt32(RawData, 0);
-        _timestamp2 = BitConverter.ToUInt32(RawData, 4);
-        Timestamp = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddSeconds(_timestamp1);
-        CapturedPacketLength = BitConverter.ToUInt32(RawData, 8);
-        OriginalPacketLength = BitConverter.ToUInt32(RawData, 12);
+        if (RawData.Length == PcapPacket.PacketInfoLength)
+        {
+            _timestamp1 = BitConverter.ToUInt32(RawData, 0);
+            _timestamp2 = BitConverter.ToUInt32(RawData, 4);
+            Timestamp = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddSeconds(_timestamp1);
+            CapturedPacketLength = BitConverter.ToUInt32(RawData, 8);
+            OriginalPacketLength = BitConverter.ToUInt32(RawData, 12);
+        }
     }
+
+   
 }
