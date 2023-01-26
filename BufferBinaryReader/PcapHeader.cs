@@ -41,6 +41,7 @@ public class PcapHeader
 
    public bool IsPcapValid()
    {
+      //return true;
       return MagicNumber == 0xA1B23C4D || MagicNumber == 0xA1B2C3D4;
    }
 

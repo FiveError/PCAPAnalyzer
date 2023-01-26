@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BufferStreamTests", "Buffer
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PcapAnalyzerUI", "PcapAnalyzerUI\PcapAnalyzerUI.csproj", "{0BBE1450-483E-4EE1-A9FF-306BEE7BDAF4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PcapAnalyzerConsole", "PcapAnalyzerConsole\PcapAnalyzerConsole.csproj", "{8BC68861-B245-4339-AD88-462EC0BEA929}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{0BBE1450-483E-4EE1-A9FF-306BEE7BDAF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0BBE1450-483E-4EE1-A9FF-306BEE7BDAF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0BBE1450-483E-4EE1-A9FF-306BEE7BDAF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BC68861-B245-4339-AD88-462EC0BEA929}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BC68861-B245-4339-AD88-462EC0BEA929}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BC68861-B245-4339-AD88-462EC0BEA929}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BC68861-B245-4339-AD88-462EC0BEA929}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
